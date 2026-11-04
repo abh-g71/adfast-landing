@@ -6,7 +6,7 @@ export const navGroups: NavGroup[] = [
     items: [
       { id: 'dashboard', label: 'Dashboard' },
       { id: 'domains', label: 'Domains' },
-      { id: 'post-ad', label: 'Post Ad' },
+      { id: 'post-ad', label: 'New Campaign' },
       { id: 'email-marketing', label: 'Email Marketing' },
     ],
   },
