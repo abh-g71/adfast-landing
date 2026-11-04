@@ -12,7 +12,7 @@ export function Features() {
       <div className="mt-8 grid gap-5 md:grid-cols-3">
         {features.map((f) => (
           <div key={f.title} className="rounded-2xl bg-white p-6 shadow-sm">
-            <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-orange-100 text-accent-600">★</span>
+            <span className="flex h-9 w-9 items-center justify-center rounded-lg bg-blue-100 text-accent-600">★</span>
             <h3 className="mt-4 font-semibold">{f.title}</h3>
             <p className="mt-2 text-sm text-slate-600">{f.text}</p>
           </div>

@@ -16,7 +16,7 @@ export function Integrations() {
       <p className="font-mono text-xs text-slate-500">[INTEGRATION]</p>
       <h2 className="mt-2 text-3xl font-bold">Easy integration with your advertising platforms</h2>
       <p className="mx-auto mt-3 max-w-md text-sm text-slate-600">
-        Connect AdLaunch with the advertising platforms and tools you already use.
+        Connect RivinityADS with the advertising platforms and tools you already use.
       </p>
       <a href="#" className="mt-5 inline-block rounded-lg bg-white px-4 py-2 text-sm font-medium shadow-sm">
         See how integration works ›

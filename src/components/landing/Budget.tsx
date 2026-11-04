@@ -19,7 +19,7 @@ export function Budget() {
       <p className="text-center font-mono text-xs text-slate-500">[BUDGETING FOR AD]</p>
       <h2 className="mt-2 text-center text-3xl font-bold">Manage and optimize your advertising budget</h2>
 
-      <div className="mt-8 rounded-2xl bg-gradient-to-b from-orange-200 to-transparent p-1 pt-2">
+      <div className="mt-8 rounded-2xl bg-gradient-to-b from-blue-200 to-transparent p-1 pt-2">
         <div className="overflow-x-auto rounded-xl bg-white p-4 shadow-sm">
           <p className="mb-3 font-semibold">Ad spent</p>
           <table className="w-full min-w-[480px] text-left text-sm">
@@ -52,7 +52,7 @@ export function Budget() {
       <div className="mt-8 grid gap-6 text-left sm:grid-cols-3">
         {notes.map((n) => (
           <div key={n.title}>
-            <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-orange-100 text-xs text-accent-600">●</span>
+            <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-blue-100 text-xs text-accent-600">●</span>
             <p className="mt-3 text-sm">
               <b>{n.title}</b> <span className="text-slate-600">{n.text}</span>
             </p>

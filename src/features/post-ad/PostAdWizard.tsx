@@ -49,7 +49,7 @@ export function PostAdWizard() {
   const isLast = step === stepLabels.length - 1
 
   return (
-    <div className="rounded-3xl bg-gradient-to-br from-brand-50 via-indigo-50 to-orange-50 p-3 sm:p-6">
+    <div className="rounded-3xl bg-gradient-to-br from-brand-50 via-indigo-50 to-blue-50 p-3 sm:p-6">
       <Card className="mx-auto max-w-5xl p-5 sm:p-8">
         {finished ? (
           <div className="rounded-2xl bg-navy-900 px-6 py-12 text-center text-white">

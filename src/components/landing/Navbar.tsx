@@ -5,7 +5,7 @@ export function Navbar() {
     <header className="mx-auto flex max-w-6xl items-center justify-between px-4 py-5 sm:px-6">
       <div className="flex items-center gap-2 text-lg font-bold">
         <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-accent-600 text-white">A</span>
-        AdLaunch
+        RivinityADS
       </div>
       <nav className="hidden gap-8 text-sm font-medium text-slate-700 md:flex">
         {links.map((l) => (

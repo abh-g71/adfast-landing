@@ -11,7 +11,7 @@ export function Footer() {
         </a>
       </div>
       <div className="mt-6 flex items-center justify-between text-sm text-slate-500">
-        <span className="font-semibold text-slate-900">AdLaunch</span>
+        <span className="font-semibold text-slate-900">RivinityADS</span>
         <a href="#">Privacy Policy</a>
       </div>
     </footer>

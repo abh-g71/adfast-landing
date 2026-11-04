@@ -1,5 +1,5 @@
 const faqs = [
-  ['What is AdLaunch?', 'AdLaunch is an ads dashboard that helps you optimize, track and manage campaigns across platforms.'],
+  ['What is RivinityADS?', 'RivinityADS is an ads dashboard that helps you optimize, track and manage campaigns across platforms.'],
   ['Is there a free trial?', 'Yes. The Pro plan includes a 14-day free trial.'],
   ['Can I connect multiple ad platforms?', 'Yes. The number of platforms depends on your plan.'],
 ]
