@@ -1,7 +1,7 @@
 const features = [
-  { title: 'Track Engagement', text: 'Get real-time insights into total engagement and compare performance to the previous month.' },
-  { title: 'Follower Growth', text: 'Monitor the growth of your followers across all connected platforms.' },
-  { title: 'Visits & Impressions', text: 'See how your campaign performs with detailed reports on visits and impressions.' },
+  { title: 'AI Campaign Assistant', text: 'Create campaigns by chatting, or use the guided 3-step wizard.' },
+  { title: 'Real-time Delivery Metrics', text: 'Monitor campaign pacing, budget allocation and performance as it happens.' },
+  { title: 'Wallet and Publishers', text: 'Top up your wallet instantly and manage domains, ad units and website publishing.' },
 ]
 
 export function Features() {

@@ -22,7 +22,7 @@ export function Hero() {
           <b>NEW UPDATE</b> Make decisions with confidence
         </span>
         <h1 className="mt-5 text-4xl font-bold leading-tight tracking-tight sm:text-5xl">
-          Optimize your advertising campaigns with real-time data
+            Create, track and optimize campaigns from one simple console.
         </h1>
         <p className="mt-4 max-w-md text-slate-600">
           Monitor ad performance in real time, analyse results, and make smarter decisions for better outcomes.
