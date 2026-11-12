@@ -1,4 +1,4 @@
-import { FaFacebook, FaInstagram, FaLinkedin, FaXTwitter } from 'react-icons/fa6'
+import { FaFacebook, FaInstagram, FaLinkedin, FaXTwitter, FaBolt, FaSliders, FaBullseye } from 'react-icons/fa6'
 
 const rows = [
   { platform: 'Facebook', Icon: FaFacebook, color: 'text-[#1877f2]', campaign: 'Mobile App Design', clicks: '718', impressions: '12,910' },
@@ -8,9 +8,9 @@ const rows = [
 ]
 
 const notes = [
-  { title: 'Real-Time Tracking.', text: 'Track your advertising expenditure in real time and see how effectively your budget is being used.' },
-  { title: 'Budget Adjustments.', text: 'Adjust your budget at any time to keep your ads within optimal limits.' },
-  { title: 'Cost Per Conversion.', text: 'Analysis of ad spend based on conversions to calculate a more accurate ROI.' },
+  { title: 'Real-Time Tracking.', Icon: FaBolt, text: 'Track your advertising expenditure in real time and see how effectively your budget is being used.' },
+  { title: 'Budget Adjustments.', Icon: FaSliders, text: 'Adjust your budget at any time to keep your ads within optimal limits.' },
+  { title: 'Cost Per Conversion.', Icon: FaBullseye, text: 'Analysis of ad spend based on conversions to calculate a more accurate ROI.' },
 ]
 
 export function Budget() {
@@ -50,11 +50,13 @@ export function Budget() {
       </div>
 
       <div className="mt-8 grid gap-6 text-left sm:grid-cols-3">
-        {notes.map((n) => (
-          <div key={n.title}>
-            <span className="flex h-7 w-7 items-center justify-center rounded-lg bg-blue-100 text-xs text-accent-600">●</span>
+        {notes.map(({ title, Icon, text }) => (
+            <div key={title}>
+              <span className="flex h-8 w-8 items-center justify-center rounded-lg bg-blue-100 text-blue-600">
+                <Icon className="h-4 w-4" />
+              </span>
             <p className="mt-3 text-sm">
-              <b>{n.title}</b> <span className="text-slate-600">{n.text}</span>
+              <b>{title}</b> <span className="text-slate-600">{text}</span>
             </p>
           </div>
         ))}

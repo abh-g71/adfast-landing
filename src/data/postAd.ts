@@ -1,27 +1,56 @@
 export type CategoryNode = { id: string; label: string; children?: CategoryNode[] }
 
+const types = [
+  { id: 'flat', label: 'Flat' },
+  { id: 'villa', label: 'Villa' },
+  { id: 'summer', label: 'Summer Villa' },
+  { id: 'detached', label: 'Detached House' },
+  { id: 'coop', label: 'Cooperative' },
+]
+
+const listingTypes = (items: CategoryNode[]): CategoryNode[] => [
+  { id: 'rent', label: 'For Rent', children: items },
+  { id: 'sale', label: 'For Sale', children: items },
+  { id: 'daily', label: 'Daily Rent', children: items },
+  { id: 'transfer', label: 'Transfer Sale', children: items },
+]
+
 export const categories: CategoryNode[] = [
+  { id: 'house', label: 'House', children: listingTypes(types) },
   {
-    id: 'house', label: 'House', children: [
-      { id: 'rent', label: 'For Rent', children: [
-        { id: 'flat', label: 'Flat' }, { id: 'villa', label: 'Villa' }, { id: 'duplex', label: 'Duplex' },
-      ] },
-      { id: 'sale', label: 'For Sale', children: [
-        { id: 'flat', label: 'Flat' }, { id: 'villa', label: 'Villa' },
-        { id: 'detached', label: 'Detached House' }, { id: 'coop', label: 'Cooperative' },
-      ] },
-    ],
+    id: 'office',
+    label: 'Office',
+    children: listingTypes([
+      { id: 'shop', label: 'Shop' },
+      { id: 'floor', label: 'Office Floor' },
+      { id: 'cowork', label: 'Co-working Space' },
+    ]),
   },
   {
-    id: 'office', label: 'Office', children: [
-      { id: 'rent', label: 'For Rent', children: [{ id: 'shop', label: 'Shop' }, { id: 'floor', label: 'Office Floor' }] },
-      { id: 'sale', label: 'For Sale', children: [{ id: 'shop', label: 'Shop' }, { id: 'floor', label: 'Office Floor' }] },
-    ],
+    id: 'tourist',
+    label: 'Tourist Facility',
+    children: listingTypes([
+      { id: 'hotel', label: 'Hotel' },
+      { id: 'resort', label: 'Resort' },
+      { id: 'guesthouse', label: 'Guest House' },
+    ]),
   },
   {
-    id: 'land', label: 'Land', children: [
-      { id: 'sale', label: 'For Sale', children: [{ id: 'plot', label: 'Residential Plot' }, { id: 'farm', label: 'Farm Land' }] },
-    ],
+    id: 'land',
+    label: 'Land',
+    children: listingTypes([
+      { id: 'plot', label: 'Residential Plot' },
+      { id: 'farm', label: 'Farm Land' },
+      { id: 'commercial', label: 'Commercial Plot' },
+    ]),
+  },
+  {
+    id: 'projects',
+    label: 'Projects',
+    children: listingTypes([
+      { id: 'apartments', label: 'Apartment Complex' },
+      { id: 'township', label: 'Township' },
+    ]),
   },
 ]
 

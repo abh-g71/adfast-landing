@@ -28,7 +28,7 @@ export function Hero() {
           Monitor ad performance in real time, analyse results, and make smarter decisions for better outcomes.
         </p>
         <div className="mt-8 flex flex-wrap gap-3">
-          <a href="#" className="rounded-lg bg-accent-600 px-5 py-3 text-sm font-semibold text-white hover:bg-accent-500">
+          <a href="/post-ad" className="rounded-lg bg-accent-600 px-5 py-3 text-sm font-semibold text-white hover:bg-accent-500" >
             Get Started
           </a>
           <a href="#features" className="rounded-lg bg-white px-5 py-3 text-sm font-semibold shadow-sm hover:bg-slate-50">

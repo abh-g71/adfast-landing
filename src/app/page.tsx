@@ -10,7 +10,7 @@ import { Footer } from '@/components/landing/Footer'
 
 export default function Home() {
   return (
-    <div className="min-h-screen bg-gradient-to-b from-blue-100 via-rose-50 to-white">
+       <div className="min-h-screen bg-gradient-to-b from-blue-50 via-slate-50 to-white">
       <Navbar />
       <Hero />
       <Features />
