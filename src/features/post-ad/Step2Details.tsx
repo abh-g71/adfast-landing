@@ -5,6 +5,7 @@ import { Input } from '../../components/ui/Input'
 import { Select } from '../../components/ui/Select'
 import { Checkbox } from '../../components/ui/Checkbox'
 import type { StepProps } from './types'
+   import { PhotoUpload } from './PhotoUpload'
 
 function Section({ title, open, children }: { title: string; open?: boolean; children: ReactNode }) {
   return (
@@ -102,9 +103,7 @@ export function Step2Details({ data, update }: StepProps) {
         </Section>
 
         <Section title="Upload photos">
-          <div className="rounded-xl border-2 border-dashed border-slate-300 p-6 text-center">
-            <input type="file" multiple accept="image/*" className="text-sm" />
-          </div>
+             <PhotoUpload />
         </Section>
 
         <Section title="Ad location">
