@@ -10,6 +10,7 @@ import { Step3Preview } from './Step3Preview'
 import { Step4Promotion } from './Step4Promotion'
 import { Step5Summary } from './Step5Summary'
 import type { PostAdData } from './types'
+   import { SuccessScreen } from './SuccessScreen'
 
 const stepLabels = ['Category', 'Listing details', 'Preview', 'Promotion', 'Summary']
 const DRAFT_KEY = 'post-ad-draft'
@@ -81,12 +82,7 @@ export function PostAdWizard() {
     <div className="rounded-3xl bg-gradient-to-br from-brand-50 via-blue-50 to-blue-50 p-3 sm:p-6">
       <Card className="mx-auto max-w-5xl p-5 sm:p-8">
         {finished ? (
-          <div className="rounded-2xl bg-navy-900 px-6 py-12 text-center text-white">
-            <p className="text-4xl">🎉</p>
-            <h2 className="mt-3 text-xl font-semibold">Your ad has been submitted</h2>
-            <p className="mt-2 text-sm text-slate-300">It will go live after review.</p>
-            <Button className="mt-6" onClick={restart}>Post another ad</Button>
-          </div>
+             <SuccessScreen data={data} onRestart={restart} />
         ) : (
           <>
             <p className="text-xs text-slate-500">

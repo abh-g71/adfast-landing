@@ -40,7 +40,7 @@ export function Hero() {
       {/* Mock dashboard: sidebar + content */}
       <div className="flex overflow-hidden rounded-2xl border border-white/70 bg-white/90 shadow-xl lg:[transform:perspective(1200px)_rotateY(-14deg)_rotateX(4deg)]">
         <aside className="hidden w-44 shrink-0 border-r border-slate-100 bg-white p-3 text-xs sm:block">
-          <p className="font-semibold">Acme Inc.</p>
+          <p className="font-semibold">RivinityADS Inc.</p>
           <div className="mt-3 rounded-lg border border-slate-200 px-2 py-1.5 text-slate-400">Search here...</div>
 
           <ul className="mt-3 space-y-1 text-slate-600">
