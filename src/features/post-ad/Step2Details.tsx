@@ -1,3 +1,5 @@
+'use client'
+import { useState } from 'react'
 import type { ReactNode } from 'react'
 import { Input } from '../../components/ui/Input'
 import { Select } from '../../components/ui/Select'
@@ -16,7 +18,28 @@ function Section({ title, open, children }: { title: string; open?: boolean; chi
   )
 }
 
+function FieldError({ message }: { message?: string }) {
+  if (!message) return null
+  return (
+    <p role="alert" className="mt-1 text-xs text-red-600">
+      {message}
+    </p>
+  )
+}
+
 export function Step2Details({ data, update }: StepProps) {
+  const [touched, setTouched] = useState({ title: false, price: false })
+
+  const errors = {
+    title: data.title.trim() === '' ? 'Enter a title' : undefined,
+    price:
+      data.price.trim() === ''
+        ? 'Enter a price'
+        : Number(data.price) <= 0
+          ? 'Price must be greater than 0'
+          : undefined,
+  }
+
   return (
     <div>
       <h2 className="text-base font-semibold">Listing details</h2>
@@ -32,21 +55,28 @@ export function Step2Details({ data, update }: StepProps) {
 
         <Section title="Ad information" open>
           <div className="grid gap-4 sm:grid-cols-2">
-            <div className="sm:col-span-2">
+            <div
+              className="sm:col-span-2"
+              onBlur={() => setTouched((t) => ({ ...t, title: true }))}
+            >
               <Input
                 label="Title *"
                 placeholder="Enter ad title"
                 value={data.title}
                 onChange={(e) => update({ title: e.target.value })}
               />
+              {touched.title && <FieldError message={errors.title} />}
             </div>
-            <Input
-              label="Price *"
-              type="number"
-              placeholder="0.00"
-              value={data.price}
-              onChange={(e) => update({ price: e.target.value })}
-            />
+            <div onBlur={() => setTouched((t) => ({ ...t, price: true }))}>
+              <Input
+                label="Price *"
+                type="number"
+                placeholder="0.00"
+                value={data.price}
+                onChange={(e) => update({ price: e.target.value })}
+              />
+              {touched.price && <FieldError message={errors.price} />}
+            </div>
             <Select
               label="Currency"
               value={data.currency}

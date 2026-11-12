@@ -1,5 +1,5 @@
 'use client'
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import { Button } from '../../components/ui/Button'
 import { Card } from '../../components/ui/Card'
 import { Stepper } from '../../components/wizard/Stepper'
@@ -12,6 +12,7 @@ import { Step5Summary } from './Step5Summary'
 import type { PostAdData } from './types'
 
 const stepLabels = ['Category', 'Listing details', 'Preview', 'Promotion', 'Summary']
+const DRAFT_KEY = 'post-ad-draft'
 
 const initialData: PostAdData = {
   path: [],
@@ -28,6 +29,28 @@ export function PostAdWizard() {
   const [step, setStep] = useState(0)
   const [finished, setFinished] = useState(false)
   const [data, setData] = useState<PostAdData>(initialData)
+  const [loaded, setLoaded] = useState(false)
+
+  // Load saved draft once, after the page opens
+  useEffect(() => {
+    try {
+      const raw = localStorage.getItem(DRAFT_KEY)
+      if (raw) {
+        const saved = JSON.parse(raw)
+        setData({ ...initialData, ...saved.data })
+        setStep(typeof saved.step === 'number' ? saved.step : 0)
+      }
+    } catch {}
+    setLoaded(true)
+  }, [])
+
+  // Save draft on every change
+  useEffect(() => {
+    if (!loaded || finished) return
+    try {
+      localStorage.setItem(DRAFT_KEY, JSON.stringify({ data, step }))
+    } catch {}
+  }, [data, step, loaded, finished])
 
   const update = (patch: Partial<PostAdData>) => setData((prev) => ({ ...prev, ...patch }))
 
@@ -39,7 +62,13 @@ export function PostAdWizard() {
     true,
   ][step]
 
+  const finish = () => {
+    localStorage.removeItem(DRAFT_KEY)
+    setFinished(true)
+  }
+
   const restart = () => {
+    localStorage.removeItem(DRAFT_KEY)
     setData(initialData)
     setStep(0)
     setFinished(false)
@@ -83,7 +112,7 @@ export function PostAdWizard() {
               </Button>
               <Button
                 disabled={!canContinue}
-                onClick={() => (isLast ? setFinished(true) : setStep(step + 1))}
+                onClick={() => (isLast ? finish() : setStep(step + 1))}
               >
                 {isLast ? 'Finish' : 'Continue'}
               </Button>
