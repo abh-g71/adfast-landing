@@ -2,12 +2,13 @@
 
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
-import { navGroups } from '../data/navigation'
+import { getNavGroups, type ConsoleRole } from '@/data/navigation'
 
-type SidebarProps = { isOpen: boolean; onClose: () => void }
+type SidebarProps = { role: ConsoleRole; isOpen: boolean; onClose: () => void }
 
-export function Sidebar({ isOpen, onClose }: SidebarProps) {
+export function Sidebar({ role, isOpen, onClose }: SidebarProps) {
   const pathname = usePathname()
+  const navGroups = getNavGroups(role)
 
   return (
     <>

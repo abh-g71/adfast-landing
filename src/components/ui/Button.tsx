@@ -1,4 +1,6 @@
 import type { ButtonHTMLAttributes } from 'react'
+import Link from 'next/link'
+import type { LinkProps } from 'next/link'
 
 type ButtonVariant = 'primary' | 'secondary' | 'outline' | 'ghost'
 
@@ -16,6 +18,9 @@ const variantStyles: Record<ButtonVariant, string> = {
   ghost: 'text-slate-600 hover:bg-slate-100',
 }
 
+const linkBaseStyles =
+  'inline-flex items-center justify-center gap-2 whitespace-nowrap rounded-lg px-5 py-2.5 text-sm font-semibold transition-colors focus:outline-none focus-visible:ring-2 focus-visible:ring-brand-500 focus-visible:ring-offset-2'
+
 export function Button({
   variant = 'primary',
   className = '',
@@ -24,6 +29,25 @@ export function Button({
   return (
     <button
       className={`${baseStyles} ${variantStyles[variant]} ${className}`}
+      {...props}
+    />
+  )
+}
+
+type ButtonLinkProps = LinkProps & {
+  variant?: ButtonVariant
+  className?: string
+  children: React.ReactNode
+}
+
+export function ButtonLink({
+  variant = 'primary',
+  className = '',
+  ...props
+}: ButtonLinkProps) {
+  return (
+    <Link
+      className={`${linkBaseStyles} ${variantStyles[variant]} ${className}`}
       {...props}
     />
   )

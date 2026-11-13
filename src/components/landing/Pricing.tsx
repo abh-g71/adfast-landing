@@ -31,7 +31,7 @@ export function Pricing() {
           <div key={p.name} className={`rounded-2xl bg-white p-6 ${p.featured ? 'shadow-xl md:-translate-y-2' : 'shadow-sm'}`}>
             <p className="text-sm font-medium text-slate-500">{p.name} plan</p>
             <p className="mt-2 text-3xl font-bold">
-              {p.monthly === null ? 'Custom' : `$${annual ? Math.round(p.monthly * 0.8) : p.monthly}`}
+              {p.monthly === null ? 'Custom' : `₹${annual ? Math.round(p.monthly * 0.8) : p.monthly}`}
               {p.monthly !== null && <span className="text-sm font-normal text-slate-500"> /month</span>}
             </p>
             <p className="mt-1 text-sm text-slate-500">{p.desc}</p>

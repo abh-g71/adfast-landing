@@ -1,3 +1,5 @@
+import Link from 'next/link'
+
 export function Footer() {
   return (
     <footer className="mx-auto max-w-6xl px-4 pb-10 pt-6 sm:px-6">
@@ -6,9 +8,9 @@ export function Footer() {
         <p className="mx-auto mt-3 max-w-md text-sm text-slate-300">
           Start today and take control of your campaigns with real-time insights.
         </p>
-        <a href="#" className="mt-6 inline-block rounded-lg bg-accent-600 px-5 py-3 text-sm font-semibold">
+        <Link href="/signup" className="mt-6 inline-block rounded-lg bg-accent-600 px-5 py-3 text-sm font-semibold">
           Get Started for Free
-        </a>
+        </Link>
       </div>
       <div className="mt-6 flex items-center justify-between text-sm text-slate-500">
         <span className="font-semibold text-slate-900">RivinityADS</span>

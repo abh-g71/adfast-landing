@@ -9,6 +9,7 @@ type InputProps = InputHTMLAttributes<HTMLInputElement> & {
 export function Input({ label, error, className = '', id, ...props }: InputProps) {
   const autoId = useId()
   const inputId = id ?? autoId
+  const errorId = `${inputId}-error`
 
   return (
     <div className="flex flex-col gap-1.5">
@@ -17,12 +18,14 @@ export function Input({ label, error, className = '', id, ...props }: InputProps
       </label>
       <input
         id={inputId}
+        aria-invalid={error ? true : props['aria-invalid']}
+        aria-describedby={error ? errorId : props['aria-describedby']}
         className={`h-11 rounded-lg border bg-white px-3 text-sm placeholder:text-slate-400 focus:outline-none focus:ring-2 focus:ring-brand-500 ${
           error ? 'border-danger-600' : 'border-slate-300'
         } ${className}`}
         {...props}
       />
-      {error && <p className="text-xs text-danger-600">{error}</p>}
+      {error && <p id={errorId} className="text-xs text-danger-600">{error}</p>}
     </div>
   )
 }
